@@ -21,12 +21,13 @@ const veiculos = [
 
 
 function formatarSaida(veiculo) {
-    if (!veiculo) return undefined; 
+    if (!veiculo) return undefined;
+  
     return `modelo: ${veiculo.modelo} cilindrada: ${veiculo.cilindrada} marca: ${veiculo.marca} ano: ${veiculo.ano}`;
 }
 
 function getCarro(modelo) {
-  const lista = veiculos[0]['Carros']; 
+  const lista = veiculos[0]['Carros'];
   const veiculo = lista.find(v => v.modelo === modelo); 
   return formatarSaida(veiculo);
 }
