@@ -1,26 +1,28 @@
+# .github/workflows/ci.yml
+
 name: CI - Teste Matriz JS
 
 on:
   push:
-    branches: [ main ] 
+    branches: [ main ]
   pull_request:
-    branches: [ main ] 
+    branches: [ main ]
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
     steps:
     - name: ⬇️ Checkout do Código
-     
-      uses: actions/checkout@v4 
+      uses: actions/checkout@v4
 
     - name: ⚙️ Configurar Node.js
-      
       uses: actions/setup-node@v4
       with:
         node-version: '18'
 
     - name: 🧪 Executar Testes da Matriz
-    
+      # 🚨 IMPORTANTE: Verifique o nome do arquivo que a Action está executando!
+      # Se seu arquivo de teste se chama 'matriz.test.js' ou 'matrizes.test.js', ajuste aqui.
+      # Vou usar o nome 'matriz.test.js'
       run: node matriz.test.js
